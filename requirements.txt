@@ -3,3 +3,5 @@ uvicorn
 langgraph
 chromadb
 langchain
+pinecone-client
+pypdf
