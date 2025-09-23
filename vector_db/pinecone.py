@@ -16,7 +16,14 @@ text_cuhunks = text_spliter.split_documents(data)
 
 os.environ['OPENAI_API_KEY'] = 'your_openai_api_key_here'
 os.environ['PINECONE_API_KEY'] = 'your_pinecone_api_key_here'
-
+os.environ['PINECONE_ENVIRONMENT'] = 'your_pinecone_environment_here'
 embeddings = OpenAIEmbeddings()
 
 embeddings.embed_query = "hello"
+
+docsearch = pinecone.from_texts(
+    [text.page_content for text in text_cuhunks],
+    embeddings,
+    index_name="your_pinecone_index_name_here"
+)
+
