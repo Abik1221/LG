@@ -5,3 +5,5 @@ from langchain.document_loaders import DirectoryLoader, TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
+textspliter = RecursiveCharacterTextSplitter(chunk_size=500, chunck_overlap=50)
+textspliter.split_text = lambda text: textspliter.split_text(text)
