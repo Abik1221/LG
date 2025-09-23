@@ -1,2 +1,5 @@
 fastapi
 uvicorn
+langgraph
+chromadb
+langchain
